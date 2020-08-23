@@ -1,23 +1,22 @@
 package tower;
 
 public class Coordinates {
-    private int longitude;
-    private int altitude;
-    private int height;
+    private int Longitude;
+    private int Latitude;
+    private int Height;
 
-    public Coordinates(int longitude, int altitude, int height){
-        longitude = this.longitude;
-        altitude = this.altitude;
-        height = this.height;
-    }
+    public Coordinates(int longitude, int latitude, int height){
+        Longitude = longitude;
+        Latitude = latitude;
+        Height = height;
+ }
 
-    public int getAltitude() {
-        return altitude;
-    }
+    public int getLatitude() {
+        return Latitude;    }
     public int getLongitude() {
-        return longitude;
+        return Longitude;
     }
     public int getHeight(){
-        return height;
+        return Height;
     }
 }

@@ -32,7 +32,7 @@ public abstract class Tower{
 	protected void conditionChanged(){
 		WriteToFile.puttofileln("");
 		for (Flyable Fly : this.observers){
-			Fly.uptadeConditions();
+			Fly.uptateConditions();
 		}
 	}
 }

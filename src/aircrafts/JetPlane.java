@@ -12,7 +12,7 @@ class JetPlane extends Aircraft implements Flyable {
         super(name, coordinates);
     }
 
-    public void uptadeConditions() {
+    public void uptateConditions() {
         String weather = this.weatherTower.getWeather(this.coordinates);
 		int longitude = 0;
 		int latitude = 0;

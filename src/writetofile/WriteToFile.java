@@ -6,7 +6,8 @@ import java.io.FileWriter;
 public class WriteToFile {
     private static boolean firstSimulation;
 
-	private FileWriters(){}
+	private void FileWriters() {
+    }//THIS
 
 	public static void puttofileln(String str){
 		if (!firstSimulation){

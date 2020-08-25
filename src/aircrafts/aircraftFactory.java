@@ -1,6 +1,7 @@
 package aircrafts;
 
 import tower.Coordinates;
+import tower.Flyable;
 
 public abstract class aircraftFactory {
 //name is IDsdfdfsd

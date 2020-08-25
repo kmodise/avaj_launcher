@@ -3,11 +3,10 @@ package aircrafts;
 import tower.Coordinates;
 import tower.Flyable;
 import tower.WeatherTower;
-import tower.Coordinates;
 import writetofile.WriteToFile;
 
 class JetPlane extends Aircraft implements Flyable {
-    private WeatherTower weatherTower; 
+    private WeatherTower weatherTower;
 
     public JetPlane(String name, Coordinates coordinates) {
         super(name, coordinates);
@@ -55,9 +54,9 @@ class JetPlane extends Aircraft implements Flyable {
 		this.coordinates = new Coordinates(longitude, latitude, height);
     }
 
-    @Override
-    public void registerTower(WeatehrTower WeatehrTower) {
-        // TODO Auto-generated method stub
-        
+
+    public void registerTower(WeatherTower WeatehrTower) {
+        this.weatherTower = weatherTower;
+		WriteToFile.puttofile("JetPlane#"+name+"("+id+") : ");
     }
 }

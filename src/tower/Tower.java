@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 import writetofile.WriteToFile;
 
-public abstract class Tower implements Flyable{
+public abstract class Tower{
     private ArrayList<Flyable> observers;
 
 	public void register(Flyable Flyable){
@@ -32,7 +32,7 @@ public abstract class Tower implements Flyable{
 	protected void conditionChanged(){
 		WriteToFile.puttofileln("");
 		for (Flyable Fly : this.observers){
-			Fly.updateCondition();
+			Fly.uptadeConditions();
 		}
 	}
 }

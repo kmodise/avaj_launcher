@@ -10,7 +10,13 @@ class Coordinates {
 		Height = height;
 	}
 
-	public int getLongitude(){return (Longitude);}
-	public int getLatitude(){return (Latitude);}
-	public int getHeight(){return (Height);}
+	public int getLongitude(){
+		return (Longitude);
+	}
+	public int getLatitude(){
+		return (Latitude);
+	}
+	public int getHeight(){
+		return (Height);
+	}
 }

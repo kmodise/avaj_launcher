@@ -35,29 +35,25 @@ public class Simulation extends AircraftFactory {
 			System.out.println("WRONG FILE");
 		}
 
-		int RunTime = Integer.parseInt(fileContentsObj.get(0));
-		if (RunTime != 25) {
-			System.out.println("Invalid Runtime");
+		int numberOfSim = Integer.parseInt(fileContentsObj.get(0));
+		if (numberOfSim != 25) {
+			System.out.println("Invalid numberOfSim");
 			return;
 		}
-		ArrayList<Validate> InPutData;
+		ArrayList<Validate> ProcessedFileContents;
 		try {
 			WeatherTower WeatherTower = new WeatherTower();
-			int j = 0;
+		
+			ProcessedFileContents =  ProcessFileContents.fileContents(fileContentsObj);
+			System.out.println(ProcessedFileContents);
 
-			Validate temp;
-
-			InPutData =  ProcessFileContents.fileContents(fileContentsObj);
-			System.out.println(InPutData);
-
-			for (Validate i : InPutData) {
-				System.out.println(i.getAirCraftName() + " " + i.getAirCraftType() + " " + i.getLongitude() + " " + i.getLatitude() + " " + i.getHeight());
-				WeatherTower.register(newAircraft(i.getAirCraftName(), i.getAirCraftType(), i.getLongitude(),
-						i.getLatitude(), i.getHeight()));
+			for (Validate AircraftData : ProcessedFileContents) {
+				WeatherTower.register(newAircraft(AircraftData.getAirCraftName(), AircraftData.getAirCraftType(), AircraftData.getLongitude(),
+						AircraftData.getLatitude(), AircraftData.getHeight()));
 			}
-			while (0 < RunTime--) {
+			while (0 < numberOfSim) {
 				WeatherTower.conditionChanged();
-
+				numberOfSim--;
 			}
 		} catch (Exception e) {
 			return;

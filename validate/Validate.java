@@ -32,6 +32,10 @@ public class Validate {
         Longitude = Integer.parseInt(HoldFileData[2].trim());
         Latitude = Integer.parseInt(HoldFileData[3].trim());
         Height = Integer.parseInt(HoldFileData[4].trim());
+        if (Latitude < 0 || Longitude < 0){
+			System.out.println("invalid altitude longitude range");
+			System.exit(1);
+		}
         if (Height > 100)
                 Height = 100;
     }

@@ -1,6 +1,5 @@
 package validate;
 
-import java.util.ArrayList;
 
 public class Validate {
     private String AirCraftType;
